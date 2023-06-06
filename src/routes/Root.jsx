@@ -55,6 +55,14 @@ const Center = styled.div`
     color: #fff;
     padding: 2.4rem;
     border-radius: 0.75rem;
+    
+    
+    @media screen and (max-width: 768px) {
+      font-size: 1.75rem;
+    }
+    @media screen and (max-width: 550px) {
+      font-size: 1.5rem;
+    }
     span {
       color: #2d63e2;
       text-decoration: underline;

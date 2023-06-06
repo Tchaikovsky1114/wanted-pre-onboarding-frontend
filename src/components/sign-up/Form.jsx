@@ -1,7 +1,7 @@
 import React from 'react'
 import Input from '../common/Input'
 import SignForm from '../common/Form'
-import SignLayout from '../layout/SignLayout'
+
 import Label from '../common/Label'
 import Button from '../common/Button'
 import useInput from '../../hooks/useInput'
@@ -15,7 +15,7 @@ export default function Form() {
   const { onChange: onPasswordConfirmChange, value: passwordConfirmValue,isValid: isPasswordConfirmValid  } = useInput(validateSameValue(passwordValue))
 
   return (
-    <SignLayout>
+    
     <SignForm title="회원가입" >
       <Label text="이메일" />
       <Input dataTestId="email-input" onChange={onEmailChange} value={emailValue} />
@@ -25,7 +25,7 @@ export default function Form() {
       <Input onChange={onPasswordConfirmChange} value={passwordConfirmValue} type='password' />
       <Button title="가입하기" disabled={!(isEmailValid && isPasswordValid && isPasswordConfirmValid )} />
     </SignForm >
-    </SignLayout>
+    
     
   )
 }

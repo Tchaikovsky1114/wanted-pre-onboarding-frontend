@@ -1,7 +1,11 @@
 import React from 'react'
+import SignLayout from '../components/layout/SignLayout'
+import Form from '../components/sign-in/Form'
 
 export default function SignIn() {
   return (
-    <div>로그인</div>
+    <SignLayout>
+      <Form />
+    </SignLayout>
   )
 }

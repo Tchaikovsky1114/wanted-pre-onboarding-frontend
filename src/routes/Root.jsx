@@ -55,6 +55,12 @@ const Center = styled.div`
     color: #fff;
     padding: 2.4rem;
     border-radius: 0.75rem;
+    span {
+      color: #2d63e2;
+      text-decoration: underline;
+      text-underline-offset: 0.25rem;
+      
+    }
   }
   }
 `
@@ -70,7 +76,7 @@ export default function Root() {
        />
       <Center>
         <div>
-        <h1>WANTED에서 {'\n'}오늘의 기록을 {'\n'} 남겨보세요!</h1>
+        <h1><span>WANTED</span>에서 {'\n'} 오늘의 기록을 {'\n'} 남겨보세요!</h1>
         </div>
       <RNB>
       <Link to="/signup">회원가입</Link>

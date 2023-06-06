@@ -21,8 +21,8 @@ const StyledButton = styled.button`
   }
 `
 
-export default function Button({title,dataTestId,disabled = false}) {
+export default function Button({title,dataTestId,onClick,disabled = false}) {
   return (
-    <StyledButton data-testid={dataTestId} disabled={disabled} >{title}</StyledButton>
+    <StyledButton data-testid={dataTestId} disabled={disabled} onClick={onClick} >{title}</StyledButton>
   )
 }

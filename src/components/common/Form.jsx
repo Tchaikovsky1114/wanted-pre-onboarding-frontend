@@ -25,7 +25,7 @@ const StyledForm = styled.form`
 
 export default function Form({children,title}) {
   return (
-    <StyledForm>
+    <StyledForm onSubmit={(e) => e.preventDefault()}>
       <h3>{title}</h3>
       {children}
     </StyledForm>  

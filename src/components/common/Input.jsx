@@ -17,6 +17,6 @@ const StyledInput = styled.input`
 
 export default function Input({value,onChange,dataTestId,type = 'text'}) {
   return (
-    <StyledInput type={type} value={value} onChange={onChange} dataTestId={dataTestId} />
+    <StyledInput type={type} value={value} onChange={onChange} data-testid={dataTestId} />
   )
 }

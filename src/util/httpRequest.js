@@ -25,3 +25,4 @@ const httpRequest = (url) => (method = 'POST',token = null) => (bodyObject) => a
 // body, contentType만 입력
 export const signUpRequest = httpRequest('auth/signup')('POST') 
 export const signInRequest = httpRequest('auth/signin')('POST') 
+

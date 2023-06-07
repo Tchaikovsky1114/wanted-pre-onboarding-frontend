@@ -4,9 +4,10 @@ import WantedIcon from '../common/icon/WantedIcon'
 
 const Container = styled.div`
   position: relative;
-  width: 100%;
+  width: calc(100% - 48px);
   height: 100vh;
   background-color: aliceblue;
+  padding: 0px 24px;
 `;
 
 const Header = styled.div`
@@ -21,7 +22,6 @@ const Header = styled.div`
     color: #2f3bb4;
     font-size: 24px;
     font-weight: bold;
-
   }
 `
 
@@ -32,7 +32,6 @@ export default function SignLayout({children}) {
       <WantedIcon />
       <p>Wanted Pre Onboarding</p>  
       </Header>
-      
       {children}
     </Container>
   )

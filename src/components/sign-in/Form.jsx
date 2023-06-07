@@ -1,7 +1,7 @@
 import SignForm from '../common/Form';
 import Label from '../common/Label';
 import Input from '../common/Input';
-import Button from '../common/Button';
+import Button from '../common/button/Button';
 import useInput from '../../hooks/useInput';
 import { validateEightLength, validateIncludeAtSign } from '../../util/validate';
 import useAuth from '../../hooks/useAuth';

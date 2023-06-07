@@ -3,7 +3,7 @@ import Input from '../common/Input'
 import SignForm from '../common/Form'
 
 import Label from '../common/Label'
-import Button from '../common/Button'
+import Button from '../common/button/Button'
 import useInput from '../../hooks/useInput'
 import { validateEightLength, validateIncludeAtSign, validateSameValue } from '../../util/validate'
 import useAuth from '../../hooks/useAuth'

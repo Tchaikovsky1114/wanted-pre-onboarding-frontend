@@ -10,7 +10,7 @@ const StyledButton = styled.button`
   border-radius: 50%;
   border: 2px solid ;
   border-color: ${({color}) => color ? color : '#000'};
-  background-color: ${({boxColor}) => boxColor ? boxColor : '#fff'};
+  background-color: ${({$boxColor}) => $boxColor ? $boxColor : '#fff'};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
@@ -20,7 +20,7 @@ const StyledButton = styled.button`
 
 export default function IconButton({icon,color,onClick,size,boxColor}) {
   return (
-    <StyledButton color={color} onClick={onClick} size={size} boxColor={boxColor}>
+    <StyledButton color={color} onClick={onClick} size={size} $boxColor={boxColor}>
       {icon}
     </StyledButton>
   )

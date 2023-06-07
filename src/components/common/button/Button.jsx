@@ -6,13 +6,13 @@ const StyledButton = styled.button`
   height: 48px;
   border: none;
   border-radius: 4px;
-  background-color: #2f3bb4;
+  background-color: ${({$boxColor}) => $boxColor ? $boxColor : '#2f3bb4' } ;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   &:hover{
-    background-color: #2f3bb4;
+    opacity: 0.68;
   }
   &:disabled{
     background-color: #ccc;
@@ -21,8 +21,8 @@ const StyledButton = styled.button`
   }
 `
 
-export default function Button({title,dataTestId,onClick,disabled = false}) {
+export default function Button({title,dataTestId,onClick,boxColor,disabled = false}) {
   return (
-    <StyledButton data-testid={dataTestId} disabled={disabled} onClick={onClick} >{title}</StyledButton>
+    <StyledButton $boxColor={boxColor} data-testid={dataTestId} disabled={disabled} onClick={onClick} >{title}</StyledButton>
   )
 }

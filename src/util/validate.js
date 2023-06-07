@@ -17,6 +17,8 @@ export const validateSameValue = (value1) => (value2) =>{
   return value1 === value2
 }
 
+
+// useInput 훅스와 사용시 함수호출문 X (useInput 훅스에서 value를 넣어 함수를 호출합니다.)
 export const validateValueEmpty = (value) => {
   return value ? true : false
 }

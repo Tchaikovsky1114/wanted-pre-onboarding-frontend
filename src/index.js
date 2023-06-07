@@ -7,6 +7,7 @@ import Root from './routes/Root';
 import Todo from './routes/Todo';
 import SignIn from './routes/SignIn';
 import SignUp from './routes/SignUp'
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,8 @@ const router = createBrowserRouter([
     element: <SignUp />
   }
 ])
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

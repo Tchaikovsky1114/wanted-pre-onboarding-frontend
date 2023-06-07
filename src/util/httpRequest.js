@@ -11,13 +11,14 @@ const httpRequest = (url) => (method = 'POST') => (bodyObject) => async(contentT
       },
       body: method === 'GET' ? null : bodyObject
     })
-    
+    if(!response.ok) {
+      const errorObject = await response.json();
+      throw Error(errorObject.message);
+    }
     return response  
   } catch (error) {
-    console.error(error);
-    return {message: `${url}에 대한 요청 실패`,error};
+    throw Error(error);
   }
-  
 }
 
 // body, contentType만 입력

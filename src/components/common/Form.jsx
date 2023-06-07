@@ -11,6 +11,7 @@ const StyledForm = styled.form`
   justify-content: center;
   align-items: center;
   min-width: 40%;
+  margin-top: 1rem;
   padding: 16px 32px;
   gap: 1rem;
   border: 1px solid #ccc;

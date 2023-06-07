@@ -1,13 +1,14 @@
 import { API_URL } from "../constants/api"
 
 
-const httpRequest = (url) => (method = 'POST') => (bodyObject) => async(contentType = 'application/json') =>{
+const httpRequest = (url) => (method = 'POST',token = null) => (bodyObject) => async(contentType = 'application/json') =>{
 
   try {
     const response = await fetch(API_URL + url,{
       method: method,
       headers:{
-        'Content-Type': contentType
+        'Content-Type': contentType,
+        'Authorization': token ? `Bearer ${token}` : null
       },
       body: method === 'GET' ? null : bodyObject
     })

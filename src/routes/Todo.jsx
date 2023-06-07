@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import useRedirect from '../hooks/useRedirect'
+import Layout from '../components/layout/Layout';
 
 export default function Todo() {
   const { validateTokenExist } = useRedirect();
@@ -8,6 +9,8 @@ export default function Todo() {
     validateTokenExist();
   },[])
   return (
-    <div>Todo</div>
+    <Layout>
+
+    </Layout>
   )
 }

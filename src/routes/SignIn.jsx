@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import SignLayout from '../components/layout/SignLayout'
+import Layout from '../components/layout/Layout'
 import Form from '../components/sign-in/Form'
 import { useLocation } from 'react-router-dom'
 
@@ -20,8 +20,8 @@ export default function SignIn() {
   },[state])
   
   return (
-    <SignLayout>
+    <Layout>
       <Form />
-    </SignLayout>
+    </Layout>
   )
 }

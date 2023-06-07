@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react'
 import Form from '../components/sign-up/Form'
-import SignLayout from '../components/layout/SignLayout'
+import Layout from '../components/layout/Layout'
 import useRedirect from '../hooks/useRedirect'
 
 
 
 export default function SignUp() {
+  
   const { validateTokenExist } = useRedirect();
+  
   useEffect(() =>{
-    validateTokenExist();
+    validateTokenExist('/signup');
   },[])
+
   return (
-  <SignLayout>
+  <Layout>
     <Form />
-  </SignLayout>
+  </Layout>
   )
 }

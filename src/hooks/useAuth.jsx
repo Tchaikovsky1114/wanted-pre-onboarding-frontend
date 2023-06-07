@@ -3,9 +3,6 @@ import { signInRequest, signUpRequest } from "../util/httpRequest"
 import { useNavigate } from "react-router-dom";
 import { setToken } from "../util/localStorage";
 
-
-
-
 export default function useAuth() {
   const navigate = useNavigate();
 
@@ -29,7 +26,12 @@ export default function useAuth() {
     } catch (error) {
       alert(error);
     }
-  },[])
+  },[navigate])
 
-  return { postSignIn, postSignUp }
+  const signOut = useCallback(() => {
+    localStorage.removeItem('token');
+    navigate('/signin');
+  },[navigate])
+
+  return { postSignIn, postSignUp, signOut }
 }

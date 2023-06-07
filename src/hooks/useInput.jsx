@@ -7,10 +7,13 @@ export default function useInput(validateFunction) {
   const onChange = (e) => {
     setValue(e.target.value)
   }
-
+  const onClear = () => {
+    setValue('')
+  }
+  
   useEffect(() =>{
     setIsValid(validateFunction(value))
   },[value,validateFunction])
 
-  return {value, onChange, isValid}
+  return {value, onChange, isValid, onClear}
 }

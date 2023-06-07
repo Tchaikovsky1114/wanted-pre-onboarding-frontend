@@ -11,7 +11,6 @@ const StyledVideo = styled.video`
   left:0;
   z-index: -1;
   opacity: 0.68;
-
 `;
 const RNB = styled.nav`
   display: flex;

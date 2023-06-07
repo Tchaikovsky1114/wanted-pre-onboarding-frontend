@@ -1,7 +1,7 @@
 import { API_URL } from "../constants/api"
 
 
-const httpRequest = (url) => (method = 'POST',token = null) => (bodyObject) => async(contentType = 'application/json') =>{
+export const httpRequest = (url) => (method = 'POST',token = null) => (bodyObject) => async(contentType = 'application/json') =>{
 
   try {
     const response = await fetch(API_URL + url,{
@@ -25,4 +25,4 @@ const httpRequest = (url) => (method = 'POST',token = null) => (bodyObject) => a
 // body, contentType만 입력
 export const signUpRequest = httpRequest('auth/signup')('POST') 
 export const signInRequest = httpRequest('auth/signin')('POST') 
-
+export const todoRequest = httpRequest('todos')

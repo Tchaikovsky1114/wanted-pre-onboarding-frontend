@@ -1,21 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Item from './Item'
 import { styled } from 'styled-components'
+import { TodoContext } from './Container';
 
-const mockingData = [
-  {
-    id: 1,
-    todo: '과제하기',
-    isCompleted: false,
-    userId: 1
-  },
-  {
-    id: 2,
-    todo: '취업하기',
-    isCompleted: false,
-    userId: 1
-  }
-]
 
 const StyledEmptyNotification = styled.p`
   position: absolute;
@@ -32,12 +19,12 @@ const StyledEmptyNotification = styled.p`
 `
 
 export default function List() {
+  const { todos } = useContext(TodoContext);
   return (
     <ul>
-      
-      {mockingData.length === 0
+      {todos.length === 0
       ? <StyledEmptyNotification>테스크가 존재하지 않습니다.</StyledEmptyNotification>
-      : mockingData.map((item) => (
+      : todos.map((item) => (
           <Item key={item.id} item={item} />
         ))
       }

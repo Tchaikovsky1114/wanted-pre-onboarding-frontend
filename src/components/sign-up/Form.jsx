@@ -1,14 +1,11 @@
 import React from 'react'
-import Input from '../common/Input'
-import SignForm from '../common/Form'
-
-import Label from '../common/Label'
+import Input from '../common/input/Input'
+import SignForm from '../common/form/Form'
+import Label from '../common/label/Label'
 import Button from '../common/button/Button'
 import useInput from '../../hooks/useInput'
 import { validateEightLength, validateIncludeAtSign, validateSameValue } from '../../util/validate'
 import useAuth from '../../hooks/useAuth'
-
-
 
 export default function Form() {
   const { onChange: onEmailChange, value: emailValue,isValid:isEmailValid  } = useInput(validateIncludeAtSign)

@@ -4,11 +4,9 @@ import useInput from '../../hooks/useInput';
 import { validateValueEmpty } from '../../util/validate';
 import IconButton from '../common/button/IconButton';
 import AddIcon from '../common/icon/AddIcon';
-import Input from '../common/Input';
+import Input from '../common/input/Input';
 import Button from '../common/button/Button';
 import { TodoContext } from './Container';
-
-
 
 export default function Form() {
   const { isShow, toggle } = useToggle();

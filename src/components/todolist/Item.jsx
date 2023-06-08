@@ -3,7 +3,7 @@ import Button from '../common/button/Button'
 import { TodoContext } from './Container'
 import CheckBox from '../common/checkbox/CheckBox'
 import useToggle from '../../hooks/useToggle';
-import Input from '../common/Input';
+import Input from '../common/input/Input';
 import useInput from '../../hooks/useInput';
 import { validateValueEmpty } from '../../util/validate';
 
@@ -21,6 +21,14 @@ export default function Item({item}) {
       isCompleted: !item.isCompleted
     })
   },[])
+
+  const onEdit = useCallback(async () =>{
+    await updateTodo(item.id,{
+      todo: value,
+      isCompleted: item.isCompleted
+    })
+    toggleEditMode();
+  },[value])
 
   const clearInput = useCallback(() =>{
     toggleEditMode();
@@ -49,7 +57,7 @@ export default function Item({item}) {
       </>
       : 
       <>
-        <Button dataTestId="submit-button" title="제출 " onClick={() => {} } disabled={!isValid} />
+        <Button dataTestId="submit-button" title="제출 " onClick={onEdit} disabled={!isValid} />
         <Button dataTestId="cancel-button"  onClick={clearInput} boxColor="#24FE54" title='취소' />
       </>
       }

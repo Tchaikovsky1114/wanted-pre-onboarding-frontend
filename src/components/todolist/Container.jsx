@@ -1,12 +1,11 @@
 import { createContext, useEffect } from "react"
 import { styled } from "styled-components"
-import CurrentDate from "../common/CurrentDate"
+import CurrentDate from "../common/custom/CurrentDate"
 import Form from "./Form"
 import List from "./List"
 import { boxFade } from "../common/anim/keyframe"
 import useTodo from "../../hooks/useTodo";
 import useRedirect from "../../hooks/useRedirect";
-
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -62,12 +61,10 @@ const StyledContainer = styled.div`
       }
       p {
         text-align: center;
-        
         font-weight: bold;
         color: #4653e3;
       }
       div {
-        
         display: flex;
         gap: 4px;
         margin: 0px 16px;

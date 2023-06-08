@@ -11,8 +11,9 @@ export default function useTodo() {
   const createTodo = useCallback( async (bodyObject) => {
     if(!token) return;
     try {
-      await todoRequest('POST',token)(JSON.stringify(bodyObject))();
-      await getTodos();
+      const response = await todoRequest('POST',token)(JSON.stringify(bodyObject))();
+      const data = await response.json();
+      setTodos((prev) => [...prev,data])
     } catch (error) {
       alert(error);
     }
@@ -33,8 +34,10 @@ export default function useTodo() {
   const updateTodo = useCallback(async (id,bodyObject) => {
     if(!token) return;
     try {
-      await httpRequest(`todos/${id}`)('PUT',token)(JSON.stringify(bodyObject))();
-      await getTodos();
+      const response = await httpRequest(`todos/${id}`)('PUT',token)(JSON.stringify(bodyObject))();
+      const data = await response.json();
+      const beforeUpdate = todos.filter((todo) => todo.id !== data.id);
+      setTodos(() => [...beforeUpdate,data])
     } catch (error) {
       alert(error);
     }
@@ -44,7 +47,7 @@ export default function useTodo() {
     if(!token) return;
     try {
       await httpRequest(`todos/${id}`)('DELETE',token)()();
-      await getTodos();
+      setTodos((prev) => prev.filter((todo) => todo.id !== id));
     } catch (error) {
       alert(error);
     }

@@ -33,7 +33,7 @@ export default function Item({item}) {
   const clearInput = useCallback(() =>{
     toggleEditMode();
     onDefaultvalue(item.todo);
-  },[])
+  },[item.todo])
 
   useEffect(() =>{
     onDefaultvalue(item.todo);

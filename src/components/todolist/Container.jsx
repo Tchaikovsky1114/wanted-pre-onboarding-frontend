@@ -1,11 +1,11 @@
-import { createContext, useEffect } from "react"
+import { createContext } from "react"
 import { styled } from "styled-components"
 import CurrentDate from "../common/custom/CurrentDate"
 import Form from "./Form"
 import List from "./List"
 import { boxFade } from "../common/anim/keyframe"
 import useTodo from "../../hooks/useTodo";
-import useRedirect from "../../hooks/useRedirect";
+
 
 const StyledContainer = styled.div`
   width: 100%;
@@ -76,12 +76,9 @@ const StyledContainer = styled.div`
 export const TodoContext = createContext(null);
 
 export default function Container() {
-  const { validateTokenExist } = useRedirect();
   const {todos, getTodos, createTodo, deleteTodo, updateTodo } = useTodo();
 
-  useEffect(() => {
-    validateTokenExist();
-  },[])
+
 
   return (  
     <TodoContext.Provider value={{todos, createTodo, getTodos, updateTodo, deleteTodo}}>

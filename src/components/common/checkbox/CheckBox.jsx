@@ -1,6 +1,5 @@
-import React, { useCallback, useContext } from 'react'
 import { styled } from 'styled-components'
-import { TodoContext } from '../../todolist/Container';
+
 const StyledCheckBox = styled.div`
  flex-shrink: 1;
  width: fit-content;

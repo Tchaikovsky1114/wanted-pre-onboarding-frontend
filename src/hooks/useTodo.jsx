@@ -3,10 +3,12 @@ import { httpRequest, todoRequest } from '../util/httpRequest';
 import { getLocalStorage } from '../util/localStorage'
 
 
-const token = getLocalStorage('access_token');
+
 
 export default function useTodo() {
   const [todos, setTodos] = useState([]);
+  // 토큰을 컴포넌트 밖에서 가져오면 토큰이 없을 때도 컴포넌트가 렌더링 되기 때문에 컴포넌트 안에서 토큰을 가져와야 한다.
+  const token = getLocalStorage('access_token');
   
   const createTodo = useCallback( async (bodyObject) => {
     if(!token) return;

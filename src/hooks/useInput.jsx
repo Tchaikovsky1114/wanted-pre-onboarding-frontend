@@ -4,12 +4,14 @@ export default function useInput(validateFunction) {
   const [value,setValue] = useState('')
   const [isValid, setIsValid] = useState(false);
   
-  const onChange = (e) => {
+  const onChange = useCallback((e) => {
     setValue(e.target.value)
-  }
-  const onClear = () => {
+  },[])
+  
+  const onClear = useCallback(() => {
     setValue('')
-  }
+  },[])
+
   const onDefaultvalue = useCallback((defaultValue) =>{
     setValue(defaultValue);
   },[])

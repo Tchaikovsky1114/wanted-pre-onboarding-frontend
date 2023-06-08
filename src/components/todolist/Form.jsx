@@ -19,6 +19,7 @@ export default function Form() {
     createTodo({todo: todoValue});
     onTodoClear();
     toggle();
+    // eslint-disable-next-line
   },[todoValue])
 
   return (

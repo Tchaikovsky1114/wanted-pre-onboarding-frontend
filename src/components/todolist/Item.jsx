@@ -20,6 +20,7 @@ export default function Item({item}) {
       todo: item.todo,
       isCompleted: !item.isCompleted
     })
+    // eslint-disable-next-line
   },[])
 
   const onEdit = useCallback(async () =>{
@@ -28,15 +29,18 @@ export default function Item({item}) {
       isCompleted: item.isCompleted
     })
     toggleEditMode();
+    // eslint-disable-next-line
   },[value])
 
   const clearInput = useCallback(() =>{
     toggleEditMode();
     onDefaultvalue(item.todo);
+    // eslint-disable-next-line
   },[item.todo])
 
   useEffect(() =>{
     onDefaultvalue(item.todo);
+    // eslint-disable-next-line
   },[])
   
   return (

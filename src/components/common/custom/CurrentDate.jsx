@@ -19,9 +19,9 @@ const dateOptions = {
   month: 'long',
   day: 'numeric'
 }
-
+const date = new Date().toLocaleDateString('ko-KR',dateOptions);
 export default function CurrentDate({color, boxColor}) {
-  const date = new Date().toLocaleDateString('ko-KR',dateOptions);
+  
   
   return (
     <StyledParagraph $boxColor={boxColor} color={color} >{date}</StyledParagraph>  

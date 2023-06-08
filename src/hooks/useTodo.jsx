@@ -17,6 +17,7 @@ export default function useTodo() {
     } catch (error) {
       alert(error);
     }
+    // eslint-disable-next-line
   },[todos])
 
   const getTodos = useCallback( async () => {
@@ -57,6 +58,7 @@ export default function useTodo() {
     } catch (error) {
       alert(error);
     }
+    // eslint-disable-next-line
   },[todos])
 
   return {

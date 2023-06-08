@@ -23,6 +23,7 @@ export default function List() {
 
   useEffect(() =>{
     getTodos();
+    // eslint-disable-next-line
   },[])
   
   return (

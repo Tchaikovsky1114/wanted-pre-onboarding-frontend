@@ -11,6 +11,7 @@ export default function SignUp() {
   
   useEffect(() =>{
     validateTokenExist('/signup');
+    // eslint-disable-next-line
   },[])
 
   return (

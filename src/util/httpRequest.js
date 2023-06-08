@@ -22,7 +22,7 @@ export const httpRequest = (url) => (method = 'POST',token = null) => (bodyObjec
   }
 }
 
-// body, contentType만 입력
+// currying
 export const signUpRequest = httpRequest('auth/signup')('POST') 
 export const signInRequest = httpRequest('auth/signin')('POST') 
 export const todoRequest = httpRequest('todos')

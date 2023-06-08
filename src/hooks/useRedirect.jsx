@@ -9,5 +9,6 @@ export default function useRedirect() {
     const token = getLocalStorage('access_token');
     return token ? navigate('/todo',{replace: true}) : navigate(redirectUrl,{ replace: true });
   },[navigate]);
+  
   return { validateTokenExist }
 }

@@ -56,17 +56,18 @@ const StyledContainer = styled.div`
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 0 2px #4653e3fa;
-      input {
-        flex:0.1;
+      div:nth-child(2) {
+        flex: 0.8;
+        height: 52px;
       }
       p {
         text-align: center;
-        flex: 0.7;
+        
         font-weight: bold;
         color: #4653e3;
       }
       div {
-        flex: 0.2;
+        
         display: flex;
         gap: 4px;
         margin: 0px 16px;
@@ -83,7 +84,6 @@ export default function Container() {
 
   useEffect(() => {
     validateTokenExist();
-    getTodos()
   },[])
 
   return (  

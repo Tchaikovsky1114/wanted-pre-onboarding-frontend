@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export default function useInput(validateFunction) {
   const [value,setValue] = useState('')
@@ -10,10 +10,13 @@ export default function useInput(validateFunction) {
   const onClear = () => {
     setValue('')
   }
+  const onDefaultvalue = useCallback((defaultValue) =>{
+    setValue(defaultValue);
+  },[])
   
   useEffect(() =>{
     setIsValid(validateFunction(value))
   },[value,validateFunction])
 
-  return {value, onChange, isValid, onClear}
+  return {value, onChange, isValid, onClear, onDefaultvalue}
 }

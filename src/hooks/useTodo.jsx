@@ -17,7 +17,7 @@ export default function useTodo() {
     } catch (error) {
       alert(error);
     }
-  },[])
+  },[todos])
 
   const getTodos = useCallback( async () => {
     if(!token) return;
@@ -33,15 +33,21 @@ export default function useTodo() {
 
   const updateTodo = useCallback(async (id,bodyObject) => {
     if(!token) return;
+    
     try {
       const response = await httpRequest(`todos/${id}`)('PUT',token)(JSON.stringify(bodyObject))();
       const data = await response.json();
-      const beforeUpdate = todos.filter((todo) => todo.id !== data.id);
-      setTodos(() => [...beforeUpdate,data])
+      const index = todos.findIndex((todo) => todo.id === data.id);
+      
+      setTodos((prev) => {
+        const newTodos = [...prev];
+        newTodos[index] = data;
+        return newTodos;
+      });
     } catch (error) {
       alert(error);
     }
-  },[])
+  },[todos])
 
   const deleteTodo = useCallback(async (id) => {
     if(!token) return;
@@ -51,7 +57,7 @@ export default function useTodo() {
     } catch (error) {
       alert(error);
     }
-  },[])
+  },[todos])
 
   return {
     todos,createTodo, getTodos, updateTodo, deleteTodo

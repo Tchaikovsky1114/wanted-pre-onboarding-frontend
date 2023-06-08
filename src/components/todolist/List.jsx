@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Item from './Item'
 import { styled } from 'styled-components'
 import { TodoContext } from './Container';
@@ -19,7 +19,12 @@ const StyledEmptyNotification = styled.p`
 `
 
 export default function List() {
-  const { todos } = useContext(TodoContext);
+  const { todos,getTodos } = useContext(TodoContext);
+
+  useEffect(() =>{
+    getTodos();
+  },[])
+  
   return (
     <ul>
       {todos.length === 0

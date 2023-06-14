@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { memo, useContext, useEffect } from 'react'
 import Item from './Item'
 import { styled } from 'styled-components'
 import { TodoContext } from './Container';
@@ -18,7 +18,7 @@ const StyledEmptyNotification = styled.p`
   padding: 0;
 `
 
-export default function List() {
+  const List = () => {
   const { todos,getTodos } = useContext(TodoContext);
 
   useEffect(() =>{
@@ -37,3 +37,4 @@ export default function List() {
     </ul>
   )
 }
+export default memo(List);

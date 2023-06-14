@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { styled } from 'styled-components'
 
 const StyledCheckBox = styled.div`
@@ -23,7 +24,7 @@ const StyledCheckBox = styled.div`
       }
 `
 
-export default function CheckBox({item,onClick}) {
+const CheckBox = ({item,onClick}) => {
   const { isCompleted } = item;
   
 
@@ -33,3 +34,5 @@ export default function CheckBox({item,onClick}) {
     </StyledCheckBox>
   )
 }
+
+export default memo(CheckBox);

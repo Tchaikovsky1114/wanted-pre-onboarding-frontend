@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { styled } from 'styled-components'
 
 const StyledButton = styled.button`
@@ -21,8 +21,9 @@ const StyledButton = styled.button`
   }
 `
 
-export default function Button({title,dataTestId,onClick,boxColor,disabled = false}) {
+ const Button = ({title,dataTestId,onClick,boxColor,disabled = false}) => {
   return (
     <StyledButton $boxColor={boxColor} data-testid={dataTestId} disabled={disabled} onClick={onClick} >{title}</StyledButton>
   )
 }
+export default memo(Button);

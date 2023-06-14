@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { styled } from 'styled-components'
 
 const StyledLabel = styled.label`
@@ -10,8 +10,10 @@ const StyledLabel = styled.label`
   align-self: flex-start;
 `
 
-export default function Label({text}) {
+const Label = ({text}) => {
   return (
     <StyledLabel>{text}</StyledLabel>
   )
 }
+
+export default memo(Label);

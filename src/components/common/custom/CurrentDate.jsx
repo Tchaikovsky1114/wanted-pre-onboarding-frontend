@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { styled } from 'styled-components'
 
 const StyledParagraph = styled.p`
@@ -20,10 +20,12 @@ const dateOptions = {
   day: 'numeric'
 }
 const date = new Date().toLocaleDateString('ko-KR',dateOptions);
-export default function CurrentDate({color, boxColor}) {
+const CurrentDate = ({color, boxColor}) => {
   
   
   return (
     <StyledParagraph $boxColor={boxColor} color={color} >{date}</StyledParagraph>  
   )
 }
+
+export default memo(CurrentDate);

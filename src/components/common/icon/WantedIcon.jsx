@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-export default function WantedIcon() {
+const WantedIcon = () => {
   return (
     <img src="https://static.wanted.co.kr/favicon/favicon-32x32.png" alt="logo" />
   )
 }
+
+
+export default memo(WantedIcon);
